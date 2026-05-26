@@ -97,7 +97,7 @@ def save_report(stats: dict, output_path: str, report_path: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="🧹 csv-cleaner-cli — Clean and summarize CSV files",
+        description="csv-cleaner-cli — Clean and summarize CSV files",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -123,10 +123,10 @@ Examples:
         base = os.path.splitext(os.path.basename(args.input))[0]
         output_path = f"cleaned_{base}.csv"
 
-    print(f"\n🧹 Loading: {args.input}")
+    print(f"\nLoading: {args.input}")
     df = load_csv(args.input)
 
-    print("⚙️  Cleaning...")
+    print("Cleaning...")
     cleaned_df, stats = clean(df)
 
     cleaned_df.to_csv(output_path, index=False)
